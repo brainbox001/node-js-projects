@@ -29,7 +29,7 @@ const fs = require("node:fs/promises");
   console.time("writeMany");
   const file = await fs.open("test.txt", "w");
   const stream = file.createWriteStream();
-  for (let i = 0; i < 1000000; i++) {
+  for (let i = 0; i < 10000000; i++) {
     const buff = Buffer.from(`${i + 1}`, "utf8");
     stream.write(`${buff}\n`);
   }

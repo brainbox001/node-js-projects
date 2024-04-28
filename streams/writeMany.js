@@ -13,11 +13,11 @@ const fs = require("node:fs/promises");
   let i = 0;
 
   const writMany = () => {
-    while (i < 100000000) {
+    while (i < 40000000) {
       const buff = Buffer.from(`${i + 1}\n`, "utf8");
 
       i++;
-      if (i === 99999999) {
+      if (i === 39999999) {
         return stream.end(buff);
       }
       if (!stream.write(buff)) break;
